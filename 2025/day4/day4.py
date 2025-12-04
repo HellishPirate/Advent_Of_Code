@@ -23,7 +23,7 @@ allNeighbourCount = allNeighbourCount.astype(float)
 allNeighbourCount[day4in == 0] = np.nan
 accessiblePaper = allNeighbourCount < 4
 count = day4in[accessiblePaper]
-count = sum(count)
+count = len(count)
         
 print("Day 4 Part 1: %d" %count)
 

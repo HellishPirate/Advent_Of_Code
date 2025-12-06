@@ -1,4 +1,3 @@
-print("\033[2J\033[H", end="", flush=True)
 # -*- coding: utf-8 -*-
 """
 Created on Wed Dec  3 13:05:56 2025
@@ -6,7 +5,8 @@ Created on Wed Dec  3 13:05:56 2025
 @author: diana
 """
 
-day3in = open("day3.txt").readlines()
+with open("day3.txt") as f:
+    day3in = f.readlines()
 totalJoltage = 0
 
 for i in range(len(day3in)):

@@ -1,4 +1,3 @@
-print("\033[2J\033[H", end="", flush=True)
 # -*- coding: utf-8 -*-
 """
 Created on Thu Dec  4 12:53:50 2025
@@ -9,7 +8,8 @@ Created on Thu Dec  4 12:53:50 2025
 import numpy as np
 import scipy as sc
 
-day4in = open("day4.txt").readlines()
+with open("day4.txt") as f:
+    day4in = f.readlines()
 for i in range(len(day4in)):
     day4in[i] = day4in[i].strip()
 day4in = [[ord(c) for c in s] for s in day4in]

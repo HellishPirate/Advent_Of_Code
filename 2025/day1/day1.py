@@ -1,4 +1,3 @@
-print("\033[2J\033[H", end="", flush=True)
 # -*- coding: utf-8 -*-
 """
 Created on Mon Dec  1 22:25:07 2025
@@ -6,7 +5,8 @@ Created on Mon Dec  1 22:25:07 2025
 @author: diana
 """
 
-day1in = open("day1.txt").readlines()
+with open("day1.txt") as f:
+    day1in = f.readlines()
 dialNo = 50
 count = 0
 

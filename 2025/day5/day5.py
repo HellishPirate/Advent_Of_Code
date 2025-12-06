@@ -1,4 +1,3 @@
-print("\033[2J\033[H", end="", flush=True)
 # -*- coding: utf-8 -*-
 """
 Created on Fri Dec  5 10:21:49 2025
@@ -7,7 +6,8 @@ Created on Fri Dec  5 10:21:49 2025
 """
 import numpy as np
 
-day5in = open("day5.txt").readlines()
+with open("day5.txt") as f:
+    day5in = f.readlines()
 for i in range(len(day5in)):
     if len(day5in[i]) == 1:
         idx = i

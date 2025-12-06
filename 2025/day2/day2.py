@@ -1,4 +1,3 @@
-print("\033[2J\033[H", end="", flush=True)
 # -*- coding: utf-8 -*-
 """
 Created on Tue Dec  2 06:41:12 2025
@@ -6,7 +5,8 @@ Created on Tue Dec  2 06:41:12 2025
 @author: diana
 """
 
-day2in = open("day2.txt").readlines()
+with open("day2.txt") as f:
+    day2in = f.readlines()
 day2in = day2in[0].split(",")
 invalidIDCount = 0
 

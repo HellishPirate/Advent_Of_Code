@@ -16,7 +16,7 @@ day6in = day6in[:-1]
 mathHomework = np.loadtxt(day6in)
 
 count = 0
-for i in range(len(mathHomework[1])):
+for i in range(len(operations)):
     match operations[i]:
         case "*":
             result = np.prod(mathHomework[:,i])

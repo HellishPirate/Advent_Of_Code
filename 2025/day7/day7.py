@@ -62,12 +62,12 @@ def dfs_path_count(startRow, startCol, grid):
             memo[(currentRow, currentCol)] = left + right
     
     pathCount = memo.get((startRow, startCol), 0)
-    return memo, pathCount
+    return pathCount
 
 startPosCol = day7in[0].index("S")
 
-part1= dfs_split_count(0, startPosCol, day7in)
+part1 = dfs_split_count(0, startPosCol, day7in)
 print("Day 7 Part 1: %d" %part1)
 
-memo, part2 = dfs_path_count(0, startPosCol, day7in)
+part2 = dfs_path_count(0, startPosCol, day7in)
 print("Day 7 Part 2: %d" %part2)

@@ -16,7 +16,7 @@ with open("day8.txt", "r") as f:
 day8in = [item.strip() for item in day8in]
 day8in = np.loadtxt(day8in, dtype=int, delimiter=",")
 
-noOfConnections = 5670 # had to keep stopping and increasing ot see if it was still working
+noOfConnections = 5670 # had to keep stopping and increasing to see if it was still working
 
 while True:
     pairs = []

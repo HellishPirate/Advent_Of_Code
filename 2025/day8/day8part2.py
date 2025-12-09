@@ -16,23 +16,23 @@ with open("day8.txt", "r") as f:
 day8in = [item.strip() for item in day8in]
 day8in = np.loadtxt(day8in, dtype=int, delimiter=",")
 
-noOfConnections = 5670 # had to keep stopping and increasing to see if it was still working
+noOfConnections = 1000
 
+pairs = []
+dists = []
+N = len(day8in)
+for i in range(N):
+    diffs = day8in[i] - day8in[i+1:]
+    euclid = np.linalg.norm(diffs, axis=1)
+
+    for k, dist in enumerate(euclid):
+        j = i + 1 + k
+        pairs.append((i, j))
+        dists.append(dist)
+
+pairs = np.array(pairs)
+dists = np.array(dists)
 while True:
-    pairs = []
-    dists = []
-    N = len(day8in)
-    for i in range(N):
-        diffs = day8in[i] - day8in[i+1:]
-        euclid = np.linalg.norm(diffs, axis=1)
-
-        for k, dist in enumerate(euclid):
-            j = i + 1 + k
-            pairs.append((i, j))
-            dists.append(dist)
-
-    pairs = np.array(pairs)
-    dists = np.array(dists)
     idx = np.argpartition(dists, noOfConnections)[:noOfConnections]
     minPairs = set(map(tuple, pairs[idx]))
         

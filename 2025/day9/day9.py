@@ -37,8 +37,8 @@ for x1, y1, x2, y2 in rectangles:
     
 fullPolygon = Polygon(day9in)
 validAreas = []
-for rect_tuple, areaI in zip(rectangles, areas):
-    xmin, ymin, xmax, ymax = rect_tuple
+for rectangleI, areaI in zip(rectangles, areas):
+    xmin, ymin, xmax, ymax = rectangleI
     rect_poly = Polygon([(xmin, ymin),(xmin, ymax),(xmax, ymax),(xmax, ymin)])
     if rect_poly.within(fullPolygon) or rect_poly.covered_by(fullPolygon):
         validAreas.append(areaI)

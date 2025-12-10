@@ -39,8 +39,8 @@ fullPolygon = Polygon(day9in)
 validAreas = []
 for rectangleI, areaI in zip(rectangles, areas):
     xmin, ymin, xmax, ymax = rectangleI
-    rect_poly = Polygon([(xmin, ymin),(xmin, ymax),(xmax, ymax),(xmax, ymin)])
-    if rect_poly.within(fullPolygon) or rect_poly.covered_by(fullPolygon):
+    rectPoly = Polygon([(xmin, ymin),(xmin, ymax),(xmax, ymax),(xmax, ymin)])
+    if rectPoly.within(fullPolygon) or rectPoly.covered_by(fullPolygon):
         validAreas.append(areaI)
 
 largestValidArea = max(validAreas)

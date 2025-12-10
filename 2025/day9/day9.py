@@ -34,7 +34,8 @@ rectangles = np.hstack([np.minimum(p1, p2), np.maximum(p1, p2)])
 areas = []
 for x1, y1, x2, y2 in rectangles:
     areas.append((abs(x1 - x2)+1) * (abs(y1 - y2)+1))
-    
+# essentially repeated part 1, but now there is a list of all rectangles
+   
 fullPolygon = Polygon(day9in)
 validAreas = []
 for rectangleI, areaI in zip(rectangles, areas):

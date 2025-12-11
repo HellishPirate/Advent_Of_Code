@@ -20,7 +20,7 @@ for i in range(len(day11in)):
     directedGraph[node[0]] = edges
     
 nxGraph = nx.DiGraph(directedGraph)
-targets = [node for node, dests in nxGraph.edges() if "out" in dests]
+targets = [node for node, edges in nxGraph.edges() if "out" in edges]
 
 noOfPaths = 0
 for target in targets:

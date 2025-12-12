@@ -49,10 +49,7 @@ gridAreas = np.array(gridAreas)
 areas = np.array(areas)
 noOfPresents = np.loadtxt(noOfPresents)
 
-presentsInGrid = []
-for i in range(len(noOfPresents)):
-    presentsInGrid.append(areas @ noOfPresents[i])
-    
+presentsInGrid = [(areas @ i) for i in noOfPresents]
 part1 = np.sum(presentsInGrid <= gridAreas)
 
 print("Day 12 Part 1: %d" %part1)

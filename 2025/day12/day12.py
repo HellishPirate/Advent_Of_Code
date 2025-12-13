@@ -23,14 +23,12 @@ n = 3
 presentShapesOnly = ["".join(presentShapesOnly[i:i+n]) for i in range(0, len(presentShapesOnly), n)]
 presentShapesOnly = [i.replace("\n", "") for i in presentShapesOnly]
 presentShapesOnly = [i.rstrip() for i in presentShapesOnly]
-presentShapesOnly = [i.replace("#", "1") for i in presentShapesOnly]
-presentShapesOnly = [i.replace(".", "0") for i in presentShapesOnly]
 
 areas = []
 for i in range(len(presentShapesOnly)):
     area = 0
     for j in presentShapesOnly[i]:
-        if j == "1":
+        if j == "#":
             area += 1
     areas.append(area)
     
